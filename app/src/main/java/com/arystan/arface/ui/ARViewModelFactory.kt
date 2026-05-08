@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.arystan.arface.ai.StubMockAiClient
-import com.arystan.arface.camera.StubCameraManager
+import com.arystan.arface.camera.CameraManagerImpl
 import com.arystan.arface.capture.StubPhotoCaptureManager
 import com.arystan.arface.mask.StubMaskRepository
 
@@ -28,7 +28,7 @@ class ARViewModelFactory(
             "Unknown ViewModel: $modelClass"
         }
         return ARViewModel(
-            cameraManager = StubCameraManager(),
+            cameraManager = CameraManagerImpl(appContext),
             maskRepository = StubMaskRepository(),
             mockAiClient = StubMockAiClient(),
             photoCaptureManager = StubPhotoCaptureManager(),

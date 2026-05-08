@@ -1,0 +1,14 @@
+{
+  "id": "makeup",
+  "name": "Макияж",
+  "thumbnail": "asset:masks/makeup_thumb.png",
+  "layers": [
+    {
+      "texture": "asset:masks/makeup_layer0.png",
+      "anchorLandmarks": [10, 152, 234, 454],
+      "scaleX": 1.05,
+      "scaleY": 1.1,
+      "rotationLandmarks": [234, 454]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "cat_ears",
+  "name": "Котик",
+  "thumbnail": "asset:masks/cat_ears_thumb.png",
+  "layers": [
+    {
+      "texture": "asset:masks/cat_ears_layer0.png",
+      "anchorLandmarks": [10, 109, 67, 297, 338],
+      "offsetY": -0.45,
+      "scaleX": 1.4,
+      "scaleY": 1.4,
+      "rotationLandmarks": [234, 454]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AR Face</string>
+    <string name="permission_camera_rationale">Камера нужна, чтобы трекать лицо и накладывать маски.</string>
+    <string name="permission_denied">Без доступа к камере приложение работать не может.</string>
+    <string name="capture_button">Снять</string>
+    <string name="capture_saved">Фото сохранено</string>
+    <string name="capture_failed">Не удалось сохранить фото</string>
+    <string name="prompt_dialog_title">AI-фильтр</string>
+    <string name="prompt_dialog_label">Опишите фильтр</string>
+    <string name="prompt_dialog_hint">например: космический кот</string>
+    <string name="prompt_generate">Сгенерировать</string>
+    <string name="prompt_cancel">Отмена</string>
+    <string name="add_filter">Новый фильтр</string>
+</resources>

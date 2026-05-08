@@ -1,0 +1,22 @@
+{
+  "id": "sunglasses_hat",
+  "name": "Шляпа+очки",
+  "thumbnail": "asset:masks/sunglasses_thumb.png",
+  "layers": [
+    {
+      "texture": "asset:masks/sunglasses_layer0.png",
+      "anchorLandmarks": [33, 133, 362, 263],
+      "scaleX": 1.4,
+      "scaleY": 1.6,
+      "rotationLandmarks": [33, 263]
+    },
+    {
+      "texture": "asset:masks/hat_layer0.png",
+      "anchorLandmarks": [10, 109, 338],
+      "offsetY": -0.55,
+      "scaleX": 1.6,
+      "scaleY": 1.2,
+      "rotationLandmarks": [234, 454]
+    }
+  ]
+}

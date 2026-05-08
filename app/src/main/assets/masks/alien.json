@@ -1,0 +1,14 @@
+{
+  "id": "alien",
+  "name": "Пришелец",
+  "thumbnail": "asset:masks/alien_thumb.png",
+  "layers": [
+    {
+      "texture": "asset:masks/alien_layer0.png",
+      "anchorLandmarks": [10, 152, 234, 454],
+      "scaleX": 1.1,
+      "scaleY": 1.15,
+      "rotationLandmarks": [234, 454]
+    }
+  ]
+}

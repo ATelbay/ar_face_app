@@ -3,7 +3,7 @@ package com.arystan.arface.ui
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.arystan.arface.ai.StubMockAiClient
+import com.arystan.arface.ai.MockAiClientImpl
 import com.arystan.arface.camera.CameraManagerImpl
 import com.arystan.arface.capture.PhotoCaptureManagerImpl
 import com.arystan.arface.mask.MaskRepositoryImpl
@@ -30,7 +30,7 @@ class ARViewModelFactory(
         return ARViewModel(
             cameraManager = CameraManagerImpl(appContext),
             maskRepository = MaskRepositoryImpl(appContext),
-            mockAiClient = StubMockAiClient(),
+            mockAiClient = MockAiClientImpl(appContext),
             photoCaptureManager = PhotoCaptureManagerImpl(appContext),
         ) as T
     }

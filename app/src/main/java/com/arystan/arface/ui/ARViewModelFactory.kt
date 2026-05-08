@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.arystan.arface.ai.StubMockAiClient
 import com.arystan.arface.camera.CameraManagerImpl
-import com.arystan.arface.capture.StubPhotoCaptureManager
-import com.arystan.arface.mask.StubMaskRepository
+import com.arystan.arface.capture.PhotoCaptureManagerImpl
+import com.arystan.arface.mask.MaskRepositoryImpl
 
 /**
  * Constructs [ARViewModel] with concrete implementations. The orchestrator
@@ -29,9 +29,9 @@ class ARViewModelFactory(
         }
         return ARViewModel(
             cameraManager = CameraManagerImpl(appContext),
-            maskRepository = StubMaskRepository(),
+            maskRepository = MaskRepositoryImpl(appContext),
             mockAiClient = StubMockAiClient(),
-            photoCaptureManager = StubPhotoCaptureManager(),
+            photoCaptureManager = PhotoCaptureManagerImpl(appContext),
         ) as T
     }
 }

@@ -14,9 +14,9 @@ class MaskRepositoryImpl(context: Context) : MaskRepository {
             layers = listOf(
                 MaskLayer(
                     texture = "asset:masks/cat_ears_layer0.png",
-                    anchorLandmarks = listOf(10, 109, 67, 297, 338),
-                    offsetY = -0.45f,
-                    scaleX = 1.4f, scaleY = 1.4f,
+                    anchorLandmarks = listOf(10, 109, 338),
+                    widthScale = 1.6f,
+                    offsetY = -0.55f,
                     rotationLandmarks = listOf(234, 454),
                 ),
             ),
@@ -29,14 +29,15 @@ class MaskRepositoryImpl(context: Context) : MaskRepository {
                 MaskLayer(
                     texture = "asset:masks/sunglasses_layer0.png",
                     anchorLandmarks = listOf(33, 133, 362, 263),
-                    scaleX = 1.4f, scaleY = 1.6f,
+                    widthScale = 1.4f,
+                    offsetY = 0.0f,
                     rotationLandmarks = listOf(33, 263),
                 ),
                 MaskLayer(
                     texture = "asset:masks/hat_layer0.png",
                     anchorLandmarks = listOf(10, 109, 338),
-                    offsetY = -0.55f,
-                    scaleX = 1.6f, scaleY = 1.2f,
+                    widthScale = 1.7f,
+                    offsetY = -0.75f,
                     rotationLandmarks = listOf(234, 454),
                 ),
             ),
@@ -49,7 +50,8 @@ class MaskRepositoryImpl(context: Context) : MaskRepository {
                 MaskLayer(
                     texture = "asset:masks/alien_layer0.png",
                     anchorLandmarks = listOf(10, 152, 234, 454),
-                    scaleX = 1.1f, scaleY = 1.15f,
+                    widthScale = 1.4f,
+                    offsetY = 0.0f,
                     rotationLandmarks = listOf(234, 454),
                 ),
             ),
@@ -62,7 +64,8 @@ class MaskRepositoryImpl(context: Context) : MaskRepository {
                 MaskLayer(
                     texture = "asset:masks/makeup_layer0.png",
                     anchorLandmarks = listOf(10, 152, 234, 454),
-                    scaleX = 1.05f, scaleY = 1.1f,
+                    widthScale = 1.2f,
+                    offsetY = 0.05f,
                     rotationLandmarks = listOf(234, 454),
                 ),
             ),

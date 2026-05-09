@@ -68,8 +68,9 @@ class MaskRenderer(private val context: Context) {
         centerYpx += layer.offsetY * faceHeightPx
 
         // Draw size
-        val drawWidth = faceWidthPx * layer.scaleX
-        val drawHeight = faceHeightPx * layer.scaleY
+        val drawWidth = faceWidthPx * layer.widthScale
+        val drawHeight = if (layer.keepAspect) drawWidth * (bmp.height.toFloat() / bmp.width.toFloat())
+                         else faceHeightPx * layer.heightScale
 
         // Rotation
         val angleDeg = if (layer.rotationLandmarks.size == 2) {

@@ -99,8 +99,7 @@ class MockAiClientImpl(private val context: Context) : MockAiClient {
                 MaskLayer(
                     texture = "file:$savedPath",
                     anchorLandmarks = listOf(10, 152, 234, 454),
-                    scaleX = 1.0f,
-                    scaleY = 1.1f,
+                    widthScale = 1.0f,
                     rotationLandmarks = listOf(234, 454),
                 )
             ),

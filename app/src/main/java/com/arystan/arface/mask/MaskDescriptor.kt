@@ -26,10 +26,11 @@ data class MaskLayer(
      * If empty, the layer is centered on the face.
      */
     val anchorLandmarks: List<Int>,
+    val widthScale: Float = 1.0f,
+    val keepAspect: Boolean = true,
+    val heightScale: Float = 1.0f,
     val offsetX: Float = 0f,
     val offsetY: Float = 0f,
-    val scaleX: Float = 1f,
-    val scaleY: Float = 1f,
     /**
      * Two indices [from, to]. Layer rotates by atan2 of vector(to-from).
      * Empty = no rotation.

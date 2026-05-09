@@ -19,10 +19,10 @@ class BlendshapeAnalyzer {
 
         val smileAvg = (face.blendshape("mouthSmileLeft") + face.blendshape("mouthSmileRight")) / 2f
         if (smileAvg > 0.5f) {
-            val lEye = face.landmarkOrNull(468) ?: face.landmarkOrNull(33)
-            val rEye = face.landmarkOrNull(473) ?: face.landmarkOrNull(263)
-            if (lEye != null && rEye != null) {
-                events += EffectEvent.HeartsFromEyes(lEye.x, lEye.y, rEye.x, rEye.y)
+            val lCheek = face.landmarkOrNull(234)
+            val rCheek = face.landmarkOrNull(454)
+            if (lCheek != null && rCheek != null) {
+                events += EffectEvent.HeartsFromEyes(lCheek.x, lCheek.y, rCheek.x, rCheek.y)
             }
         }
 

@@ -2,6 +2,7 @@ package com.arystan.arface.camera
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Matrix
 import android.util.Log
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
@@ -88,12 +89,22 @@ class CameraManagerImpl(
     }
 
     private fun processImageProxy(imageProxy: ImageProxy) {
-        val bitmap = imageProxy.toBitmap()
+        val raw = imageProxy.toBitmap()
         val timestampMs = imageProxy.imageInfo.timestamp / 1_000_000L
+        val rotation = imageProxy.imageInfo.rotationDegrees
         imageProxy.close()
 
+        // App uses DEFAULT_FRONT_CAMERA exclusively; mirror so landmarks match preview.
+        val isFront = true
+        val matrix = Matrix().apply {
+            postRotate(rotation.toFloat())
+            if (isFront) postScale(-1f, 1f, raw.width / 2f, raw.height / 2f)
+        }
+        val oriented = Bitmap.createBitmap(raw, 0, 0, raw.width, raw.height, matrix, true)
+        raw.recycle()
+
         try {
-            faceLandmarkerHelper?.detectAsync(bitmap, timestampMs)
+            faceLandmarkerHelper?.detectAsync(oriented, timestampMs)
         } catch (e: Exception) {
             Log.w("ARFace", "CameraManagerImpl: detectAsync failed", e)
         }

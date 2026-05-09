@@ -57,11 +57,19 @@ class MaskRenderer(private val context: Context) {
         val layerCenterX = anchorPoints.map { it.x }.average().toFloat()
         val layerCenterY = anchorPoints.map { it.y }.average().toFloat()
 
-        // Convert to view pixels
-        var centerXpx = layerCenterX * viewWidthPx
-        var centerYpx = layerCenterY * viewHeightPx
-        val faceWidthPx = (faceMaxX - faceMinX) * viewWidthPx
-        val faceHeightPx = (faceMaxY - faceMinY) * viewHeightPx
+        // Apply FILL_CENTER inverse transform: map landmark norms to view pixels
+        val imgW = face.imageWidth.toFloat()
+        val imgH = face.imageHeight.toFloat()
+        val scale = maxOf(viewWidthPx / imgW, viewHeightPx / imgH)
+        val scaledImgW = imgW * scale
+        val scaledImgH = imgH * scale
+        val imgLeftPx = (viewWidthPx - scaledImgW) / 2f
+        val imgTopPx  = (viewHeightPx - scaledImgH) / 2f
+
+        var centerXpx = imgLeftPx + layerCenterX * scaledImgW
+        var centerYpx = imgTopPx  + layerCenterY * scaledImgH
+        val faceWidthPx  = (faceMaxX - faceMinX) * scaledImgW
+        val faceHeightPx = (faceMaxY - faceMinY) * scaledImgH
 
         // Apply offsets
         centerXpx += layer.offsetX * faceWidthPx

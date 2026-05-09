@@ -51,13 +51,7 @@ class FaceLandmarkerHelper(
         }
 
         val rawLandmarks = result.faceLandmarks()[0]
-        val landmarks = rawLandmarks.map { lm ->
-            Landmark(
-                x = 1f - lm.x(),  // Mirror x for front camera selfie
-                y = lm.y(),
-                z = lm.z(),
-            )
-        }
+        val landmarks = rawLandmarks.map { lm -> Landmark(x = lm.x(), y = lm.y(), z = lm.z()) }
 
         val blendshapes: List<Blendshape> = if (result.faceBlendshapes().isPresent &&
             result.faceBlendshapes().get().isNotEmpty()

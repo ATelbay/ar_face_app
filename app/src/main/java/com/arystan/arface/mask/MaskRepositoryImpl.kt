@@ -65,7 +65,7 @@ class MaskRepositoryImpl(context: Context) : MaskRepository {
                     texture = "asset:masks/makeup_layer0.png",
                     anchorLandmarks = listOf(10, 152, 234, 454),
                     widthScale = 1.2f,
-                    offsetY = -0.08f,
+                    offsetY = -0.02f,
                     rotationLandmarks = listOf(234, 454),
                 ),
             ),
